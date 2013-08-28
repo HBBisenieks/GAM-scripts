@@ -1,12 +1,18 @@
 #!/bin/bash
 
-# bulk updates email addresses
+# Updates email addresses in bulk
+# Written by Hilary B. Bisenieks <https://github.com/HBBisenieks> (c)2013
+# Provided under the MIT License
+# No warranty is provided or implied
 
 alias gam='python /path/to/gam'
 
 if [ ! "$1"] ; then
-	echo "	Takes a csv as argument in the form [old username] [new username]"
-	echo "	and updates that user in GAM."
+	echo "Usage: ${0##*\/} list"
+	echo
+	echo "Takes a csv as argument in the form [old username] [new username]"
+	echo "and updates that user in GAM."
+	echo
 	exit 2
 fi
 
