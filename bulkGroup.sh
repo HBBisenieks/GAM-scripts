@@ -6,7 +6,7 @@
 # No warranty is provided or implied
 
 shopt -s expand_aliases
-alias gam='python /home/hilary/gam/gam.py'
+alias gam='python /path/to/gam'
 
 if [ ! "$1" ]; then
 	echo
