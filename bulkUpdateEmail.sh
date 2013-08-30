@@ -2,6 +2,7 @@
 
 # bulk updates email addresses
 
+shopt -s expand_aliases
 alias gam='python /path/to/gam'
 
 if [ ! "$1"] ; then
