@@ -1,17 +1,12 @@
 #!/bin/bash
 
-# Bulk update email groups
-# Written by Hilary B. Bisenieks <https://github.com/HBBisenieks> (c)2013
-# Provided under the MIT License
-# No warranty is provided or implied
-
 shopt -s expand_aliases
-alias gam='python /path/to/gam'
+alias gam='python /home/hilary/gam/gam.py'
 
 if [ ! "$1" ]; then
-	echo "Usage: ${0##*\/} list group"
+	echo "Usage: ${0##*\/} group list"
 	echo
-	echo "Takes a list of email addresses from a .csv file"
+	echo "Takes lists of email addresses from a .csv file"
 	echo "and adds them to the specified group with GAM,"
 	echo "the Google Apps Manager, and a pinch of magic."
 	echo
@@ -19,8 +14,15 @@ if [ ! "$1" ]; then
 	exit 2
 fi
 
-while read email ; do
-	gam update group "$2" add member "$email"
-done < "$1"
+group="$1"
+shift
+
+while test "$1" != "" ; do
+	while read email ; do
+		gam update group "$group" add member "$email"
+	done < "$1"
+
+	shift
+done
 
 exit 0
