@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Bulk update email groups
+# Written by Hilary B. Bisenieks <https://github.com/HBBisenieks> (c)2013
+# Provided under the MIT License
+# No warranty is provided or implied
+
 shopt -s expand_aliases
 alias gam='python /home/hilary/gam/gam.py'
 
